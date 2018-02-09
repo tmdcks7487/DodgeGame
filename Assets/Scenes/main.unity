@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -938,7 +938,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'SCORE :'
+  m_Text: 'HP  :'
 --- !u!222 &802638628
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1637,6 +1637,7 @@ MonoBehaviour:
   playermove: {fileID: 1198067365}
   cameramove: {fileID: 681171189}
   HomeButton: {fileID: 1321127550}
+  endtime: 0
 --- !u!114 &1198067371
 MonoBehaviour:
   m_ObjectHideFlags: 0

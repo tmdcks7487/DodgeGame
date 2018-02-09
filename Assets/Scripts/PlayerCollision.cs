@@ -4,8 +4,9 @@ public class PlayerCollision : MonoBehaviour {
     public calculatinig playerHp;
     public AudioSource audiosource;
     public GameObject SmokePrefab;
+    //private float starttime;
 
-
+    
     public void PlaySound()
     {
         audiosource.Play();
@@ -23,10 +24,12 @@ public class PlayerCollision : MonoBehaviour {
             PlaySound();
             var effect = Instantiate(SmokePrefab);
             effect.transform.position = transform.position;
-            playerHp.DamageHp(1);       
+            playerHp.DamageHp(1);
+            
             Destroy(other.gameObject);//other는 컴포넌트
         }
         
 
     }
+    
 }

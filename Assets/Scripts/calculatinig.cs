@@ -13,7 +13,6 @@ public class calculatinig : MonoBehaviour {
     public movecamera cameramove;
     public GameObject HomeButton;
     public float endtime;
-  
     public void HealHp(int amount)
     {
         hp += amount;
@@ -21,31 +20,49 @@ public class calculatinig : MonoBehaviour {
         UpdateHp();
     }
     public void DamageHp(int amount)
-    {   
+    {
+        int oldHp = hp;
 
-        hp -= amount;
-        if (hp < 0 || hp == 0)
+        if(hp>0)hp -= amount;
+                   
+        //gameover
+
+        if (oldHp > 0 && (hp == 0 || hp < 0))
         {
-           
+
+            var endtime = Time.time - savetime;
+            Debug.LogFormat("{0}", endtime);
             playermove.speed = 0;
             cameramove.speed = 0;
             hp = 0;
             HomeButton.SetActive(true);
-            
+
             hptext.text = hp.ToString();
 
             scoretime = Time.time;
-            //HighScore();
+            UpdateHighscore();
+            
         }
+        
         else
         UpdateHp();
-
+        
     }
 
-    //private void HighScore()
-    //{
-    //    savetime = 
-    //}
+    private void UpdateHighscore()
+    {
+        var score = endtime;//값이 있을때 없을때
+        var score_store = PlayerPrefs.GetInt("score", 0); ;
+        
+
+        if (score_store <= score)
+        { 
+        PlayerPrefs.SetFloat("score", score);
+        PlayerPrefs.Save();//Disk에 저장 throw new NotImplementedException();
+        }
+    }
+
+   
 
     private void UpdateHp()
     {
@@ -66,15 +83,15 @@ public class calculatinig : MonoBehaviour {
         var realtime2 = Time.time - scoretime;
         endtime = Time.time - savetime;
 
-        if (hp>0)
+        if (hp > 0)
         {
-            
+
             timetext.text = realtime2.ToString("F2");
-            
+
         }
-        
        
-            //  scoretime = Time.time;
+
+        //  scoretime = Time.time;
         if (realtime > 10.0f)
         {
             if(hp>0) hp += 1;
@@ -87,6 +104,7 @@ public class calculatinig : MonoBehaviour {
         
         //starttime = Time.time;
     }
+    
     
 
 }

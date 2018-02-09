@@ -160,7 +160,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.ChanGameStudio.DynamicDodge
   buildNumber: {}
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 3
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -244,7 +244,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Administrator/Documents/user.keystore
+  AndroidKeystoreName: C:/DodgeGame/Dodge_chan/user.keystore
   AndroidKeyaliasName: dynamicdodge
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
